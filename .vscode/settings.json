@@ -2,7 +2,7 @@
   "tabnine.experimentalAutoImports": true,
   "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
   "[javascript]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": null
@@ -27,5 +27,9 @@
   "editor.formatOnPaste": true,
   "editor.inlineSuggest.enabled": true,
   "editor.quickSuggestions": null,
-  "diffEditor.codeLens": true
+  "diffEditor.codeLens": true,
+  "cSpell.enableFiletypes": [
+    "javascript",
+    "jsonc"
+  ]
 }

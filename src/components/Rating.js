@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Rating = (props) => {
-    const { rating, numReview } = props;
-    console.log(props);
+
+const Rating = ({ rating, numReview}) => {
+    
 
     return (
             <div className="rating">

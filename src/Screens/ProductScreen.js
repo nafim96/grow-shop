@@ -1,11 +1,13 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Rating from '../components/Rating';
-import data from '../data';
 
-const ProductScreen = (props) => {
-    const product = data.product.find(x=> x._id=== props.match.params.id)
-    if(!product){
+const ProductScreen = () => {
+    // const product = data.product.find(x=> x._id=== props.match.params.id)
+    const productDetails = useSelector((state) => state.productDetail)
+    console.log(productDetails);
+    if(!productDetails){
         return <div> Product Not Found</div>
     }
     return (
@@ -13,22 +15,22 @@ const ProductScreen = (props) => {
             <Link to="/">Back to result</Link>
             <div className="row top">
                 <div className="col-2">
-                    <img src={product.image} className="medium" alt={product.name} />
+                    <img src={productDetails.image} className="medium large" alt={productDetails.name} />
                 </div>
                 <div className="col-1">
                     <ul>
                         <li>
-                            <h1>{ product.name}</h1>
+                            <h1>{ productDetails.name}</h1>
                         </li>
                         <li>
-                            <Rating rating={product.rating} numReview={product.numReview} />
+                            <Rating rating={productDetails.rating} numReview={productDetails.numReview} />
                         </li>
                         <li>
-                            Price: {product.price}
+                            Price: {productDetails.price}
                         </li>
         
                         <li>
-                            <p>Description: {product.description }</p>
+                            <p>Description: {productDetails.description }</p>
                         </li>
 
                     </ul>
@@ -39,14 +41,14 @@ const ProductScreen = (props) => {
                             <li>
                                 <div className="row top">
                                     <div>Price</div>
-                                    <div className="price">${ product.price}</div>
+                                    <div className="price">${ productDetails.price}</div>
                                 </div>
                             </li>
                             <li>
                                 <div className="row top">
                                     <div>Status: </div>
                                     <div>
-                                        {product.countInStock > 0 ? <span className="success"> In Stock</span> : <span className="error"> Unavailable</span>}
+                                        {productDetails.countInStock > 0 ? <span className="success"> In Stock</span> : <span className="error"> Unavailable</span>}
                                     </div>
                                 </div>
                             </li>
