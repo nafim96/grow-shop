@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { listProduct } from '../actions/productAction';
+import { detailProduct, listProduct } from '../actions/productAction';
 import Error from '../components/Error';
 import LoadingBox from '../components/LoadingBox';
 import Product from '../components/Product';
@@ -11,12 +11,10 @@ const HomeScreen = () => {
     return state.productList
   })
   const { loading, error, products } = productList;
-  console.log(products);
-  
+
   useEffect(() => {
     dispatch(listProduct())
-  
-    
+
   // const [products, setProducts] = useState([])
   // const [loading, setLoading] = useState(false)
   // const[error,setError]= useState(false)

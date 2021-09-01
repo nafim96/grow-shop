@@ -9,10 +9,7 @@ const reducer = combineReducers({
     productList: productListReducer,
     productDetail: productDetailReducer,
 })
-// const reducer = (state, action) => {
-//     return{products: data.product}
 
-// }
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(reducer, initialState, composeEnhancer(applyMiddleware(thunk)))

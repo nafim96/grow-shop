@@ -3,7 +3,6 @@ import React from 'react';
 
 const Rating = ({ rating, numReview}) => {
     
-
     return (
             <div className="rating">
                 <span> <i className=

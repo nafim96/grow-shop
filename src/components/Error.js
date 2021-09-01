@@ -3,7 +3,7 @@ import React from 'react';
 const Error = (props) => {
     return (
         <div>
-            <h1>{props}</h1>
+            <h1 style={{color:"red"}}>{props.children } Please wait a moment!!</h1>
         </div>
     );
 };

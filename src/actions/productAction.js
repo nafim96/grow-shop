@@ -10,7 +10,7 @@ export const listProduct = () => async (dispatch) => {
     try {
         const { data } = await Axios.get("http://localhost:5000/api/product")
         
-        dispatch({type:PRODUCT_LIST_SUCCESS, payload: data.product})
+        dispatch({type:PRODUCT_LIST_SUCCESS, payload: data})
     } catch (error) {
         dispatch({type:PRODUCT_LIST_FAIL, payload: error.message})
     }
@@ -24,9 +24,12 @@ export const detailProduct = (productId) => async (dispatch) => {
 
     try {
          const { data } = await Axios.get(`http://localhost:5000/api/product/${productId}`)
-        dispatch({type:PRODUCT_DETAIL_SUCCESS, payload:data.product})
+         
+         
+        dispatch({type:PRODUCT_DETAIL_SUCCESS, payload:data})
     } catch (error) {
         dispatch({ type:PRODUCT_DETAIL_FAIL, payload:error.response && error.response.data.message ? error.response.data.message: error.message})
     }
 }
+
 

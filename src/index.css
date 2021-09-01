@@ -138,10 +138,12 @@ li {
 .error {
   color: red;
 }
-
+input,
+select,
+textarea,
 button {
   padding: 1rem;
-  color: #ffffff;
+  color: #3e3f5c;
   border-radius: 0.5rem;
   border: 0.1rem solid #a4a4a4;
   font-size: 1.6rem;
@@ -150,7 +152,16 @@ button {
   -moz-osx-font-smoothing: grayscale;
   cursor: pointer;
 }
-button:hover {
+
+button{
+  background-color: #f8f8f8;
+  cursor: pointer;
+}
+
+
+input:hover,
+select:hover,
+textarea:hover, button:hover {
   border: 0.1rem solid #404040;
 }
 
