@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { detailProduct, listProduct } from '../actions/productAction';
+import { listProduct } from '../actions/productAction';
 import Error from '../components/Error';
 import LoadingBox from '../components/LoadingBox';
 import Product from '../components/Product';

@@ -26,6 +26,14 @@ body {
   grid-template-rows: 5rem 1fr 5rem;
   height: 100%;
 }
+.badge{
+  background-color: #7c1515;
+  color: #f8f8f8;
+  border-radius: 50%;
+  padding: 0.2rem 0.7rem;
+  margin: 0.3rem;
+  font-size: 1.4rem;
+}
 header {
   grid-area: header;
   background-color: #203040;
@@ -74,12 +82,21 @@ a.brand {
 .row.center {
   justify-content: center;
 }
+
+.min-30{
+  min-width: 30rem;
+}
 /* Image */
 img {
   border-radius: 0.5rem;
 }
 img.medium {
   max-width: 29rem;
+  width: 100%;
+}
+
+.small{
+  max-width: 5rem;
   width: 100%;
 }
 
@@ -135,6 +152,7 @@ li {
 .success {
   color: green;
 }
+
 .error {
   color: red;
 }
