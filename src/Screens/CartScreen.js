@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { addToCart } from '../actions/cartAction';
+import { addToCart, removeFromCart } from '../actions/cartAction';
 import Error from '../components/Error';
 
 const CartScreen = (props) => {
@@ -20,11 +20,10 @@ const CartScreen = (props) => {
         if(productId){
             dispatch(addToCart(productId, qty))
         }
-    },[dispatch, productId, qty]);
+    },[dispatch, productId, qty])
 
     const removeFromCartHandler =(id)=>{
-        // delete from cart action
-
+        dispatch(removeFromCart(id))
     }
 
     const checkOutHandler=()=>{
@@ -38,7 +37,7 @@ const CartScreen = (props) => {
                <h1>Shoping Cart</h1>
 
                {
-                   cartItems.length === 0 ? <Error> cart is Empty <Link to="/">Go To Home</Link></Error>:
+                   cartItems.length === 0 ? <Error> cart is Empty <Link to="/">Go To Shopping</Link></Error>:
                    (
                        <ul>
                            {
